@@ -1,0 +1,18 @@
+# Ignore Go build files
+bin/
+*.exe
+*.out
+
+# Ignore dependency directories
+vendor/
+
+# Ignore Go modules cache
+/go.sum
+
+# Ignore Docker artifacts
+*.env
+.DS_Store
+
+# Ignore IDE/editor-specific files
+.vscode/
+*.log
