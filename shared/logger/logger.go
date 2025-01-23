@@ -29,8 +29,11 @@ func encodeLevel(level zapcore.Level, enc zapcore.PrimitiveArrayEncoder) {
 	enc.AppendString("[" + level.CapitalString() + "]")
 }
 
-func InitLog(workingDirPath string) {
+func InitLog(workingDirPath string, logFileName string) {
 	var err error
+
+	os.MkdirAll(path.Join(workingDirPath, "logs"), 0755)
+
 	cfg := zap.Config{
 		Level:             zap.NewAtomicLevelAt(zap.DebugLevel),
 		Development:       false,
@@ -47,7 +50,7 @@ func InitLog(workingDirPath string) {
 			StacktraceKey: "stack",
 			LineEnding:    "\n",
 		},
-		OutputPaths:      []string{"stdout", path.Join(workingDirPath, "bin", "logs", "log.log")},
+		OutputPaths:      []string{"stdout", path.Join(workingDirPath, "logs", logFileName)},
 		ErrorOutputPaths: []string{"stderr"},
 		InitialFields:    map[string]interface{}{},
 	}

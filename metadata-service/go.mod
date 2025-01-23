@@ -3,6 +3,7 @@ module github.com/Asefeh-J/Distributed-File-Storage/metadata-service
 go 1.22.5
 
 require (
+	github.com/Asefeh-J/Distributed-File-Storage/shared v0.0.0-20250123070926-710a126ea640 // indirect
 	github.com/bytedance/sonic v1.12.7 // indirect
 	github.com/bytedance/sonic/loader v0.2.3 // indirect
 	github.com/cloudwego/base64x v0.1.5 // indirect
