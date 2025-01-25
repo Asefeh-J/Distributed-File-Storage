@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/Asefeh-J/Distributed-File-Storage/file-service/api"
 	"github.com/Asefeh-J/Distributed-File-Storage/shared/logger"
 )
 
@@ -14,8 +13,8 @@ func InitLogger() {
 		fmt.Printf("can't get working directory: %v", err)
 		os.Exit(-1)
 	}
-	logger.InitLog(path, "file-service.log")
-	logger.Inst().Info("file-service logger initialized")
+	logger.InitLog(path, "metadata-service.log")
+	logger.Inst().Info("metadata-service logger initialized")
 
 }
 
@@ -24,8 +23,5 @@ func Init() {
 }
 
 func main() {
-	fmt.Println("Starting application...")
 	Init()
-	fmt.Println("Starting API server...")
-	api.StartServer()
 }
