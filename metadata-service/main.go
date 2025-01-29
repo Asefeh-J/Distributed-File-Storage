@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/Asefeh-J/Distributed-File-Storage/metadata-service/api"
 	"github.com/Asefeh-J/Distributed-File-Storage/shared/logger"
 )
 
@@ -23,5 +24,8 @@ func Init() {
 }
 
 func main() {
+	fmt.Println("Starting application...")
 	Init()
+	fmt.Println("Starting API server...")
+	api.StartServer()
 }
