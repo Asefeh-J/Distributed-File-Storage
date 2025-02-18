@@ -1,4 +1,5 @@
 version: '3.8'
+
 services:
   file-service:
     build:
@@ -6,10 +7,10 @@ services:
     ports:
       - "8082:8082"
     environment:
-      METADATA_SERVICE_URL: http://metadata-service:8083
+      METADATA_SERVICE_URL: http://metadata-service:8083  # Service-to-service API communication
     depends_on:
       - metadata-service
-    command: ["go", "run", "main.go"]
+    command: ["./main"]
 
   metadata-service:
     build:
@@ -23,11 +24,12 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: file_metadata
     depends_on:
-      - postgres
-    command: ["go", "run", "main.go"]
+      postgres:
+        condition: service_healthy  # Wait for PostgreSQL to be ready
+    command: ["./main"]
 
   postgres:
-    image: postgres:latest
+    image: bitnami/postgresql:17.3.0
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: password
@@ -39,3 +41,8 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # Persist database data
+
+volumes:
+  postgres_data:  # Named volume for PostgreSQL persistence
