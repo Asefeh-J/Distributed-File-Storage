@@ -7,5 +7,6 @@ import (
 
 func RegisterRoutes(router *gin.Engine) {
 	router.GET("/health", handlers.HealthCheckHandler)
+	router.GET("/check-metadata", handlers.CheckMetadataHandler)
 
 }
