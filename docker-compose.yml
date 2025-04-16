@@ -11,6 +11,8 @@ services:
     depends_on:
       - metadata-service
     command: ["./main"]
+    volumes:
+      - ./file-service/uploads:/app/uploads
 
   metadata-service:
     build:
