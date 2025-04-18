@@ -3,7 +3,7 @@ module github.com/Asefeh-J/Distributed-File-Storage/file-service
 go 1.22.5
 
 require (
-	github.com/Asefeh-J/Distributed-File-Storage/shared v0.0.0-20250123082207-45c1e04bc1b2
+	github.com/Asefeh-J/Distributed-File-Storage/shared v0.0.0-20250416135157-79447d645d56
 	github.com/gin-gonic/gin v1.10.0
 )
 
@@ -36,7 +36,7 @@ require (
 	golang.org/x/sys v0.29.0 // indirect
 	golang.org/x/text v0.21.0 // indirect
 	google.golang.org/protobuf v1.36.3 // indirect
-	gopkg.in/natefinch/lumberjack.v2 v2.2.1 // indirect
-	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
+
+replace github.com/Asefeh-J/Distributed-File-Storage/shared => ../shared

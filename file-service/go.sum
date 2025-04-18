@@ -1,5 +1,3 @@
-github.com/Asefeh-J/Distributed-File-Storage/shared v0.0.0-20250123082207-45c1e04bc1b2 h1:c1IbWRsGJXUPSBmP7nK00Pbah7VGZivEW193TsJ0iPU=
-github.com/Asefeh-J/Distributed-File-Storage/shared v0.0.0-20250123082207-45c1e04bc1b2/go.mod h1:Txvb3Dt72BVTb4fQeUU3fTCU9JSJDzVc4H+c4k6FtLY=
 github.com/BurntSushi/toml v1.5.0 h1:W5quZX/G/csjUnuI8SUYlsHs9M38FC7znL0lIO+DvMg=
 github.com/BurntSushi/toml v1.5.0/go.mod h1:ukJfTF/6rtPPRCnwkur4qwRxa8vTRFBF0uk2lLoLwho=
 github.com/bytedance/sonic v1.12.7 h1:CQU8pxOy9HToxhndH0Kx/S1qU/CuS9GnKYrGioDcU1Q=
